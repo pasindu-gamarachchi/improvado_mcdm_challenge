@@ -13,7 +13,7 @@ with twitter as (
         impressions as impressions,
         NULL as installs,
         likes as likes,
-        url_clicks as link_clicks,
+        0 as link_clicks,
         NULL as placemend_id,
         NULL as post_click_conversions,
         NULL as post_view_conversions,

@@ -9,7 +9,7 @@ with facebook as (
         comments as comments,
         creative_id as creative_id,
         `date` as `date`,
-        NULL as engagements,
+        views as engagements,
         impressions as impressions,
         mobile_app_install as installs,
         likes as likes,
@@ -23,8 +23,8 @@ with facebook as (
         NULL as revenue,
         shares as shares,
         spend as spend,
-        NULL as total_conversions,
-        views as video_views
+        purchase as total_conversions,
+        0 as video_views
     
      from {{ source('ad_data', 'src_ads_creative_facebook_all_data') }}
 )

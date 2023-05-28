@@ -9,7 +9,7 @@ with tiktok as (
         NULL as comments,
         NULL as creative_id,
         `date` as `date`,
-        NULL as engagements,
+        0 as engagements,
         impressions as impressions,
         rt_installs as installs,
         NULL as likes,

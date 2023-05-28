@@ -9,7 +9,7 @@ with bing as (
         NULL as comments,
         NULL as creative_id,
         `date` as `date`,
-        NULL as engagements,
+        0 as engagements,
         imps as impressions,
         NULL as installs,
         NULL as likes,
