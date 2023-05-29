@@ -1,15 +1,22 @@
 Welcome to your new dbt project!
 
-### Using the starter project
+### Recreated Dashboard
 
-Try running the following commands:
-- dbt run
-- dbt test
+Link : https://lookerstudio.google.com/reporting/3650eba6-6048-4363-8546-37c1888b2b9b
 
+### Instructions for adding data from a new ad platform
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+-   If the source data does not exist for a new ad platform
+    - add the data as .csv file to the seeds directory and run ```dbt seed```
+-   Update the existing `src_ad_data.yml` file with new table name, add a relevant description for the table. Add relevant generic tests for the columns from options
+    - Not Null
+    - Unique
+    - Relationships
+    - Accepted Values
+- Add singular tests by adding .sql files with specific tests, for example as follow :
+```
+    select * from new_platform where clicks <0 
+```
+- The above will ensure that the values for clicks are 0 or greater.
+- Next transform the columns for new_platform to match the common data model by adding a .sql file in the `models/staging/` path.
+- Update the `models/common_data/paid_ads_basic_performance.sql` file to include data from the new platform.
