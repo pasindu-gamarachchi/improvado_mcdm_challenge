@@ -1,0 +1,150 @@
+version: 2
+
+sources:
+  - name: ad_data
+    description: a clone of the source data
+    database: takehome-improvado
+    schema: dbt_pgamarachchi
+    tables:
+      - name: src_promoted_tweets_twitter_all_data
+        description: "Twitter source data"
+        columns:
+          - name: campaign_id
+            tests:
+              - not_null
+          - name: channel
+          - name: url
+            tests:
+              - not_null
+          - name : text
+          - name : clicks
+          - name : comments
+          - name : date
+          - name : engagements
+          - name : impressions
+          - name : likes
+          - name : url_clicks
+          - name : retweets
+          - name : spend
+          - name : video_total_views
+        loaded_at_field: __insert_date
+        freshness: 
+          warn_after:
+            count: 12
+            period: hour
+          error_after:
+            count: 24
+            period: hour 
+      - name: src_ads_bing_all_data
+        description: "Bing source data"
+        columns:
+          - name: ad_id
+            tests:
+              - not_null
+          - name: adset_id
+            tests:
+              - not_null
+          - name: campaign_id
+          - name: channel
+            tests:
+              - accepted_values:
+                  values:
+                    - "Bing"
+          - name: ad_description
+          - name: title_part_1
+          - name: title_part_2
+          - name: clicks
+          - name: date
+          - name: imps
+          - name: revenue
+          - name: spend
+          - name: conv
+        loaded_at_field: __insert_date
+        freshness: 
+          warn_after:
+            count: 12
+            period: hour
+          error_after:
+            count: 24
+            period: hour
+      - name: src_ads_creative_facebook_all_data
+        description: "Facebook ads source data"
+        columns:
+          - name: ad_id
+            tests:
+              - not_null
+          - name: add_to_cart
+          - name: adset_id
+          - name: campaign_id
+          - name: channel
+            tests:
+              - accepted_values:
+                  values:
+                    - "Facebook"
+          - name: clicks
+          - name: comments
+          - name: creative_id
+          - name: creative_title
+          - name: objective
+          - name: buying_type
+          - name: campaign_type
+          - name: creative_body
+          - name: date
+          - name: likes
+          - name: shares
+          - name: comments_2
+          - name: views
+          - name: clicks_2
+          - name: impressions
+          - name: mobile_app_install
+          - name: inline_link_clicks
+          - name: purchase
+          - name: complete_registration
+          - name: purchase_value
+          - name: shares_2
+          - name: spend
+          - name: purchase_2
+          - name: views_2          
+        loaded_at_field: __insert_date
+        freshness: 
+          warn_after:
+            count: 12
+            period: hour
+          error_after:
+            count: 24
+            period: hour
+      - name: src_ads_tiktok_ads_all_data
+        description: "Tiktok ads source data"
+        columns:
+          - name: ad_id
+            tests:
+              - not_null
+          - name: add_to_cart
+          - name: adgroup_id
+          - name: campaign_id
+          - name: channel
+            tests:
+              - accepted_values:
+                  values:
+                    - "TikTok Ads"
+          - name: clicks
+          - name: date
+          - name: impressions
+          - name: rt_installs
+          - name: skan_app_install
+          - name: ad_status
+          - name: ad_text
+          - name: purchase
+          - name: registrations
+          - name: spend
+          - name: conversions
+          - name: skan_conversion
+          - name: video_views
+        loaded_at_field: __insert_date
+        freshness: 
+          warn_after:
+            count: 12
+            period: hour
+          error_after:
+            count: 24
+            period: hour     
