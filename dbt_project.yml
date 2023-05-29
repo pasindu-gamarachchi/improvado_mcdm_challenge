@@ -35,4 +35,6 @@ models:
   takehome_improvado:
     staging:
       +materialized: view
+    common_data:
+      +materialized: table
     

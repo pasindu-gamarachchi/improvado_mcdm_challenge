@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: paid_ads__basic_performance
+    description: "Marketing common data from various media platforms"
+    columns:
+      - name: ad_id
+        description: "Ad identifier"
+      - name: add_to_cart
+      - name: adset_id
+        description: "Adset identifer"
+      - name: campaign_id
+        description: "Campaign identifier"
+      - name: channel
+        description: "Meida platform"
+      - name: clicks
+        description: "Ad clicks, used for cost per cpc caluclation in analytics dashboard"
+      - name: comments
+        description: "Comment count on media posts"
+      - name: creative_id
+        description: "Creative identifer"
+      - name: date
+        description: "Date of post"
+      - name: engagements
+        description: "Number of engagements, used for cost per engagement calculation."
+      - name: impressions
+        description: "Used for impressions by channel in analytics dashboard."
+      - name: installs
+      - name: likes
+        description: "Number of likes on media post"
+      - name: link_clicks
+      - name: placement_id
+      - name: post_click_conversions
+      - name: post_view_conversions
+      - name: posts
+      - name: purchase
+      - name: registrations
+      - name: revenue
+      - name: spend
+        description: "Used for multiple calculation in the analytics dashboard."
+      - name: total_conversions
+        description: "Used for the conversion cost calculation in the analytics dashboard."
+      - name: video_views

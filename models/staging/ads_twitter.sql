@@ -25,7 +25,7 @@ with twitter as (
         spend as spend,
         NULL as total_conversions,
         video_total_views as video_views    
-    from {{ source('ad_data', 'src_promoted_tweets_twitter_all_data') }}
+        from {{ source('ad_data', 'src_promoted_tweets_twitter_all_data') }}
 )
 
 select * from twitter
