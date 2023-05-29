@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: ads_bing
+    description: "Staging for bing ads with the necessary transformations"
+    columns:
+      - name: ad_id
+        tests:
+          - not_null
+      - name: adset_id
+        tests:
+          - not_null
+      - name: campaign_id
+        tests:
+          - not_null
+      - name: channel
+        description: "Channel value"
+        tests:
+          - accepted_values:
+              values:
+                - "Bing"
+  - name: ads_facebook
+    description: "Staging for facebook ad data"
+    columns:
+      - name: ad_id
+        tests:
+          - not_null
+      - name: engagements
+        description: "Views from source transformed to engagement"
+  - name: ads_twitter
+    description: "Staging for twitter ad data"
+    columns:
+      - name: ad_id
+  - name: ads_tiktok
+    description: "staging for tiktok ad data"
+    columns:
+      - name: ad_id
