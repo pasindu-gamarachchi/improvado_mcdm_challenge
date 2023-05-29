@@ -31,9 +31,6 @@ sources:
         freshness: 
           warn_after:
             count: 12
-            period: hour
-          error_after:
-            count: 24
             period: hour 
       - name: src_ads_bing_all_data
         description: "Bing source data"
@@ -63,9 +60,6 @@ sources:
         freshness: 
           warn_after:
             count: 12
-            period: hour
-          error_after:
-            count: 24
             period: hour
       - name: src_ads_creative_facebook_all_data
         description: "Facebook ads source data"
@@ -110,9 +104,6 @@ sources:
           warn_after:
             count: 12
             period: hour
-          error_after:
-            count: 24
-            period: hour
       - name: src_ads_tiktok_ads_all_data
         description: "Tiktok ads source data"
         columns:
@@ -144,7 +135,4 @@ sources:
         freshness: 
           warn_after:
             count: 12
-            period: hour
-          error_after:
-            count: 24
-            period: hour     
+            period: hour  
